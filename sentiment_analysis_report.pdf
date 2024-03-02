@@ -1,0 +1,29 @@
+
+Sentiment Analysis Report
+
+Dataset used:
+The dataset used for this project is the Consumer Reviews of Amazon Products from Datafiniti. It contains over 34,000 reviews of Amazon products like the Kindle, Fire TV, etc. The dataset has 24 columns, including product name, manufacturer, review title, review text, rating, and more. The dataset can be downloaded from this link: [Consumer Reviews of Amazon Products](https://www.kaggle.com/datasets/datafiniti/consumer-reviews-of-amazon-products).
+
+Preprocessing steps:
+The preprocessing steps involved selecting the 'reviews.text' column from the dataset and removing any missing values. This column contains the product reviews that are used for sentiment analysis. The preprocessing steps also involved removing stopwords and performing some basic text cleaning using the lower(), strip() and str() methods.
+
+Sentiment analysis model:
+The sentiment analysis model was implemented using spaCy, a free and open-source library for natural language processing in Python. The model used the en_core_web_sm spaCy model to enable natural language processing tasks. The model also used the SpacyTextBlob component, which is an extension that provides textblob sentiment analysis as a spaCy pipeline component. The model defined a function that takes a product review as input and predicts its sentiment using the .polarity and .sentiment attributes. The polarity score ranges from -1 (very negative) to 1 (very positive), and the sentiment label is either positive, negative, or neutral.
+
+Evaluation of results:
+The model was tested on three sample product reviews, one positive, one negative, and one neutral. The model correctly predicted the polarity score and the sentiment label for each review. The results are shown below:
+
+Review: I love this product. It works great and has many useful features.
+Polarity: 0.5
+Sentiment: positive
+
+Review: This product is terrible. It broke after one week and the customer service was awful.
+Polarity: -0.9166666666666666
+Sentiment: negative
+
+Review: This product is okay. It does what it is supposed to do, but nothing more.
+Polarity: 0.0
+Sentiment: neutral
+
+Insights into the model's strengths and limitations:
+The model's strengths are that it is easy to implement, fast to run, and accurate for simple product reviews. The model's limitations are that it may not capture the nuances of human language, such as sarcasm, irony, or humor. The model may also be biased by the choice of the spaCy model and the SpacyTextBlob component, which may not reflect the diversity of opinions and expressions in the dataset. The model could be improved by using a more advanced spaCy model, such as a transformer-based model, or by using a custom sentiment classifier trained on the dataset.
